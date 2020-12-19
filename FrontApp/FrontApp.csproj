@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\squirrel.windows.2.0.1\build\squirrel.windows.props" Condition="Exists('..\packages\squirrel.windows.2.0.1\build\squirrel.windows.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EFABF92F-F642-4257-9289-D8314B42129E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FrontApp</RootNamespace>
+    <AssemblyName>FrontApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Triumph SIS</ProductName>
+    <PublisherName>Triumph IT Solutions</PublisherName>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DeltaCompressionDotNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=1d14d6e5194e7f4a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet.MsDelta, Version=1.1.0.0, Culture=neutral, PublicKeyToken=46b2138a390abf55, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.MsDelta.dll</HintPath>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet.PatchApi, Version=1.1.0.0, Culture=neutral, PublicKeyToken=3e8888ee913ed789, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.PatchApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil, Version=0.11.2.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.11.2\lib\net40\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb, Version=0.11.2.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.11.2\lib\net40\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb, Version=0.11.2.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.11.2\lib\net40\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks, Version=0.11.2.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.11.2\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.17.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.17.1\lib\net35\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomTemplates\DailySummaryTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomTemplates\DailySummaryTemplate.Designer.cs">
+      <DependentUpon>DailySummaryTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTemplates\ProudctReportTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomTemplates\ProudctReportTemplate.Designer.cs">
+      <DependentUpon>ProudctReportTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTemplates\UserSalesReportTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomTemplates\UserSalesReportTemplate.Designer.cs">
+      <DependentUpon>UserSalesReportTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\AccessCheckHelper.cs" />
+    <Compile Include="Helpers\AppSetting.cs" />
+    <Compile Include="Models\BasketItem.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Basket.cs" />
+    <Compile Include="Models\Stock.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Pages\AddItemToBasketPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AddItemToBasketPage.Designer.cs">
+      <DependentUpon>AddItemToBasketPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddProductPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AddProductPage.Designer.cs">
+      <DependentUpon>AddProductPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddUserPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AddUserPage.Designer.cs">
+      <DependentUpon>AddUserPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AllProductsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AllProductsPage.Designer.cs">
+      <DependentUpon>AllProductsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LogInScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\LogInScreen.Designer.cs">
+      <DependentUpon>LogInScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SearchProductsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\SearchProductsPage.Designer.cs">
+      <DependentUpon>SearchProductsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StockProductPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\StockProductPage.Designer.cs">
+      <DependentUpon>StockProductPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UsersListPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\UsersListPage.Designer.cs">
+      <DependentUpon>UsersListPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WelomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\WelomePage.Designer.cs">
+      <DependentUpon>WelomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AccountRepository.cs" />
+    <Compile Include="Services\BasketRepository.cs" />
+    <Compile Include="Services\ProductRepository.cs" />
+    <EmbeddedResource Include="CustomTemplates\DailySummaryTemplate.resx">
+      <DependentUpon>DailySummaryTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomTemplates\ProudctReportTemplate.resx">
+      <DependentUpon>ProudctReportTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomTemplates\UserSalesReportTemplate.resx">
+      <DependentUpon>UserSalesReportTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\AddItemToBasketPage.resx">
+      <DependentUpon>AddItemToBasketPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\AddProductPage.resx">
+      <DependentUpon>AddProductPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\AddUserPage.resx">
+      <DependentUpon>AddUserPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\AllProductsPage.resx">
+      <DependentUpon>AllProductsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\LogInScreen.resx">
+      <DependentUpon>LogInScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SearchProductsPage.resx">
+      <DependentUpon>SearchProductsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\StockProductPage.resx">
+      <DependentUpon>StockProductPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UsersListPage.resx">
+      <DependentUpon>UsersListPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\WelomePage.resx">
+      <DependentUpon>WelomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\afreg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\240_F_114194381_QgG2vON3LwJmpBDWE2n0pmLBSpMbXwMn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\squirrel.windows.2.0.1\build\squirrel.windows.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\squirrel.windows.2.0.1\build\squirrel.windows.props'))" />
+  </Target>
+</Project>
